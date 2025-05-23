@@ -29,10 +29,16 @@
             List<NasaAsteroidDto> hazardousAsteroids = GetHazardousAsteroids(nasaData);
 
             List<AsteroidDto> mappedAsteroids = hazardousAsteroids
-                .Select(MapToAsteroidDto)
-                .OrderByDescending(a => a.Diametro)
-                .Take(3)
-                .ToList();
+            .Select(MapToAsteroidDto)
+            .OrderByDescending(a => a.Diametro)
+            .ToList();
+
+            // Si hay mas de 3 asteroides tengo que filtrar los 3 más peligrosos
+            if (mappedAsteroids.Count > 3)
+            {
+                mappedAsteroids = mappedAsteroids.Take(3).ToList();
+            }
+
 
             return mappedAsteroids;
         }
