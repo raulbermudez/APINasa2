@@ -1,6 +1,6 @@
-﻿namespace APINasa2.Controllers
+﻿namespace APINasa2.Api.Controllers
 {
-    using APINasa2.Services;
+    using APINasa2.Api.Services;
     using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
 

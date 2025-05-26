@@ -1,4 +1,4 @@
-﻿namespace APINasa2.Services
+﻿namespace APINasa2.Api.Services
 {
     using System;
     using System.Net.Http;
