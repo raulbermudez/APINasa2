@@ -18,6 +18,7 @@
         public class AsteroidsServiceTests
         {
             [Fact]
+            // Método para probar GetTopHazardousAsteroidsAsync de mi services de la API
             public async Task GetTopHazardousAsteroidsAsync_ReturnsTop3HazardousAsteroids()
             {
                 // Arrange
@@ -62,11 +63,13 @@
                 // Assert
                 Assert.NotNull(result);
                 Assert.Equal(3, result.Count);
-                Assert.Equal("Ast4", result[0].Nombre); // Mayor diámetro
+                Assert.Equal("Ast4", result[0].Nombre);
                 Assert.Equal("Ast3", result[1].Nombre);
                 Assert.Equal("Ast2", result[2].Nombre);
             }
 
+            // Metodo para probar que GetTopHazardousAsteroidsAsync
+            // devuelve el objeto y ver como lo manejamos
             private NasaAsteroidDto CreateHazardousAsteroid(string name, double minDia, double maxDia, string velocity, string planet)
             {
                 return new NasaAsteroidDto
